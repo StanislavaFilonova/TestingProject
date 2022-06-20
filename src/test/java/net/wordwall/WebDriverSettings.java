@@ -1,21 +1,21 @@
 package net.wordwall;
 
-import org.junit.After;
-import org.junit.Before;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class WebDriverSettings {
-    public ChromeDriver driver; // видимость переменной всему методу
+    public static ChromeDriver ChromeDriver; // видимость переменной всему методу
 
     // Аннотация Before
     @Before
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "/Users/Stasya/Downloads/chromedriver"); // чтобы тест увидел chromedriver
-        driver = new ChromeDriver();
+        ChromeDriver = new ChromeDriver();
     }
 
     @After
     public void close() {
-        driver.quit(); // закрытие страницы
+        ChromeDriver.quit(); // закрытие страницы
     }
 }
