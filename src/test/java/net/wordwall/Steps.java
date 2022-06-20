@@ -3,15 +3,15 @@ package net.wordwall;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static net.wordwall.WebDriverSettings.ChromeDriver;
+import static net.wordwall.WebDriverSettings.driver;
 
 public class Steps {
 
     @Test // аннотация тест от junit
     public void test() {
-        ChromeDriver.get("https://wordwall.net/"); // открытие страницы
+        driver.get("https://wordwall.net/"); // открытие страницы
 
-        String title = ChromeDriver.getTitle(); // Переменная title, которую потом сравним с заголовком с сайта
+        String title = driver.getTitle(); // Переменная title, которую потом сравним с заголовком с сайта
         Assert.assertTrue(title.equals("Wordwall | Create better lessons quicker")); // проверка заголовкав
     }
 }
